@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <title>Mario Djameh - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/imra.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html#home"><span>M</span>ario <span>D</span>jameh</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-details">
+            <div class="container">
+                <h1>Automating Human Organ Modelling from Patient CT Scans</h1>
+                <p class="project-subtitle">A Capstone Project Journey at IMRA Surgical</p>
+                
+                <div class="project-image">
+                    <img src="path/to/imra-project-image.jpg" alt="IMRA Project">
+                </div>
+
+                <div class="project-content">
+                    <h2>The Challenge</h2>
+                    <p>When I embarked on this capstone project at the International Medical Robotics Academy (IMRA), I knew I was in for an exciting and challenging experience. The goal was to develop a machine learning model that could automate the process of human organ modelling from patient CT scans, specifically focusing on kidney tumor segmentation. Little did I know, this project would not only test my technical skills but also teach me valuable lessons about collaboration, perseverance, and the power of innovation in healthcare.</p>
+
+                    <h2>The IMRA Team</h2>
+                    <p>One of the highlights of this project was the incredible team at IMRA. Led by the visionary founder, Professor Tony Costello, and supported by dedicated staff members like Andrew, Adam, Shaun, and Grace, their passion for medical innovation was truly inspiring. Their guidance and expertise throughout the project were invaluable, and I felt privileged to be a part of such a talented and driven team.</p>
+
+                    <h2>Project Overview</h2>
+                    <p>The primary objective of this project was to streamline the creation of synthetic tissue models for surgical training. By automating the segmentation of kidney tumors from CT scans, we aimed to reduce the time and effort required for manual labeling, enabling efficient generation of 3D printable models. This would ultimately enhance the training experience for surgeons and contribute to improved patient outcomes.</p>
+
+                    <h3>Understanding CT Scans and DICOM Data</h3>
+                    <p>Before diving into the technical aspects of the project, let's briefly understand what CT scans and DICOM data are. A CT (Computed Tomography) scan is a medical imaging technique that uses X-rays to create detailed cross-sectional images of the body. These scans provide valuable information about internal organs, bones, and tissues.</p>
+                    <p>DICOM (Digital Imaging and Communications in Medicine) is a standard format used for storing and transmitting medical images, including CT scans. DICOM files contain not only the image data but also metadata such as patient information, scan parameters, and image dimensions.</p>
+
+                    <h3>Exploring 3D Slicer</h3>
+                    <p>To better understand the anatomy and structure of the kidneys and tumors, I utilized a powerful open-source software called 3D Slicer. This software allowed me to visualize and interact with the DICOM data in three dimensions. With 3D Slicer, I could view the CT scans from different angles, adjust contrast and brightness, and even perform manual segmentation to identify the regions of interest.</p>
+                    <p>Using 3D Slicer provided valuable insights into the challenges of manual segmentation and highlighted the need for automated methods. It also helped me gain a deeper understanding of the anatomical structures and the variations in kidney and tumor appearance across different patients.</p>
+
+                    <h2>Understanding Image Segmentation</h2>
+                    <p>Image segmentation is a crucial technique in medical image analysis that involves partitioning an image into multiple segments or regions of interest. In the context of our project, image segmentation played a vital role in identifying and delineating the boundaries of kidneys and tumors from CT scans.</p>
+
+                    <h3>Types of Image Segmentation</h3>
+                    <p>There are various approaches to image segmentation, each with its own strengths and limitations. Some common techniques include:</p>
+                    <ul>
+                        <li><strong>Thresholding:</strong> This method involves separating an image into different regions based on pixel intensity values. It is simple and computationally efficient but may not always capture complex structures accurately.</li>
+                        <li><strong>Region Growing:</strong> Starting from a seed point, this technique iteratively expands the segmented region by including neighboring pixels that meet certain similarity criteria. It can handle irregular shapes but may be sensitive to noise and initial seed placement.</li>
+                        <li><strong>Edge Detection:</strong> This approach identifies edges or boundaries between regions based on sharp changes in pixel intensities. It is effective in delineating object boundaries but may struggle with weak or discontinuous edges.</li>
+                        <li><strong>Clustering:</strong> Clustering algorithms, such as K-means or Gaussian Mixture Models, group pixels with similar characteristics into distinct segments. They can handle multi-dimensional features but may require careful initialization and parameter tuning.</li>
+                    </ul>
+
+                    <h3>Deep Learning for Image Segmentation</h3>
+                    <p>In recent years, deep learning techniques, particularly convolutional neural networks (CNNs), have revolutionized the field of image segmentation. CNNs can automatically learn hierarchical features from raw image data, making them highly effective in capturing complex patterns and structures.</p>
+                    <p>One popular architecture for medical image segmentation is the U-Net, which consists of an encoder-decoder structure with skip connections. The encoder progressively downsamples the input image to capture contextual information, while the decoder upsamples and combines features to produce a high-resolution segmentation map. Skip connections allow the network to retain spatial information and improve the segmentation accuracy.</p>
+
+                    <h3>Challenges in Medical Image Segmentation</h3>
+                    <p>Despite the advancements in image segmentation techniques, there are still several challenges specific to medical images:</p>
+                    <ul>
+                        <li><strong>Variability in Anatomy:</strong> Human anatomy can vary significantly across individuals, making it difficult to develop generalizable segmentation models.</li>
+                        <li><strong>Image Artifacts:</strong> Medical images may contain artifacts such as noise, motion blur, or intensity inhomogeneity, which can affect the segmentation quality.</li>
+                        <li><strong>Class Imbalance:</strong> In many medical segmentation tasks, the regions of interest (e.g., tumors) occupy a small portion of the image compared to the background, leading to class imbalance and potential bias in the model.</li>
+                        <li><strong>Limited Annotated Data:</strong> Obtaining large amounts of accurately annotated medical data is time-consuming and requires expertise, making it challenging to train robust segmentation models.</li>
+                    </ul>
+
+                    <p>In our project, we tackled these challenges by leveraging the nnU-Net framework, which is specifically designed for medical image segmentation. The framework automatically adapts to the dataset characteristics and optimizes the model architecture and hyperparameters accordingly. By utilizing transfer learning and data augmentation techniques, we were able to train an effective model despite the limited annotated data available.</p>
+
+                    <h2>Methodology</h2>
+                    <ol>
+                        <li>Data Collection: We obtained a dataset of 150 volumetric CT scans with associated segmentation labels for kidneys and tumors from the Kidney-Tumor Segmentation 2023 challenge.</li>
+                        <li>Data Preprocessing: The CT scans and labels were preprocessed to ensure compatibility with the nnU-Net framework, which we utilized for model development. This involved converting the DICOM files into a suitable format and normalizing the image intensities.</li>
+                        <li>Model Development: We leveraged the power of the nnU-Net framework to train a 3D U-Net model specifically designed for kidney tumor segmentation. The U-Net architecture is well-suited for medical image segmentation tasks due to its ability to capture both local and global context.</li>
+                        <li>Model Evaluation: The trained model's performance was evaluated using metrics such as the Dice coefficient and visual assessment to ensure its accuracy and reliability. The Dice coefficient measures the overlap between the predicted segmentation and the ground truth labels.</li>
+                        <li>Visualization: To make the segmentation results accessible and user-friendly for the IMRA staff, we integrated the MANGO (Multi-image Analysis GUI) software, enabling interactive visualization and analysis. MANGO allowed us to view the segmented regions in 3D and assess the quality of the model's predictions.</li>
+                    </ol>
+
+                    <h3>Code Snippets</h3>
+                    <p>Here's a code snippet showcasing the preprocessing step using the PyDICOM library to load DICOM files:</p>
+                    <pre><code>
+import pydicom
+
+def load_dicom(file_path):
+    dicom_data = pydicom.dcmread(file_path)
+    image_data = dicom_data.pixel_array
+    return image_data
+                    </code></pre>
+
+                    <p>And here's a code snippet demonstrating the evaluation of the model using the Dice coefficient:</p>
+                    <pre><code>
+import numpy as np
+
+def dice_coefficient(pred, true, threshold=0.5):
+    pred = np.asarray(pred > threshold).astype(np.bool)
+    true = np.asarray(true).astype(np.bool)
+    intersection = np.logical_and(pred, true)
+    dice = 2.0 * intersection.sum() / (pred.sum() + true.sum())
+    return dice
+                    </code></pre>
+
+                    <h2>Overcoming Challenges</h2>
+                    <p>The path to success was not without its obstacles. Finding suitable training data proved to be a significant challenge due to privacy concerns and the scarcity of labeled medical images. However, with the help of the IMRA staff and the discovery of the KiTS23 dataset, we were able to overcome this hurdle.</p>
+                    <p>Another challenge we faced was the limited computational resources. Training deep learning models on large volumetric CT scans demanded high-performance GPUs, which were not readily available. We had to get creative and leverage cloud platforms like Google Colab to access the necessary computing power.</p>
+
+                    <h2>Results and Impact</h2>
+                    <p>The developed 3D U-Net model demonstrated remarkable accuracy in segmenting kidney tumors from CT scans. The integration of MANGO software provided an intuitive interface for medical professionals to explore and validate the segmentation results. This automated approach significantly reduced the time and effort required for manual labeling, enabling efficient generation of 3D printable models for surgical training.</p>
+                    <p>The impact of our project extended beyond the walls of IMRA. By streamlining the creation of synthetic tissue models, we contributed to the advancement of surgical training and the potential improvement of patient outcomes. It was incredibly rewarding to know that our work could make a difference in the lives of both surgeons and patients.</p>
+
+                    <h2>Future Enhancements</h2>
+                    <ul>
+                        <li>Expand the model to segment additional organs and anatomical structures, further enhancing its versatility and applicability in surgical training.</li>
+                        <li>Incorporate user-friendly tools for interactive refinement of segmentation results, allowing medical professionals to make fine-grained adjustments as needed.</li>
+                        <li>Develop a seamless pipeline for direct integration with 3D printing software, streamlining the process from segmentation to physical model creation.</li>
+                    </ul>
+
+                    <h2>Personal Growth and Reflections</h2>
+                    <p>This capstone project at IMRA was a transformative experience for me, both professionally and personally. It challenged me to push the boundaries of my knowledge and skills, while also teaching me the importance of collaboration and perseverance in the face of obstacles.</p>
+                    <p>Working alongside the talented and passionate individuals at IMRA was an absolute privilege. Their dedication to advancing medical technology and improving patient care was truly inspiring. I am grateful for the friendships forged and the invaluable lessons learned throughout this journey.</p>
+
+                    <h2>Project Resources</h2>
+                    <ul>
+                        <li><a href="https://github.com/your-username/imra-project" target="_blank">GitHub Repository</a></li>
+                        <li><a href="path/to/project-report.pdf" target="_blank">Project Report</a></li>
+                        <li><a href="https://imra-surgical.com" target="_blank">IMRA Surgical Website</a></li>
+                    </ul>
+
+                    <p>As I reflect on this incredible experience, I am filled with a sense of pride and accomplishment. The knowledge and skills I gained during this project will undoubtedly shape my future endeavors in the field of data science and healthcare. I am excited to see how the work we did at IMRA will continue to evolve and make a positive impact in the world of surgical training and patient care.</p>
+
+                    <p>Thank you for joining me on this remarkable journey. If you have any questions or would like to discuss the project further, please feel free to reach out. Together, let's continue pushing the boundaries of what's possible in healthcare through the power of data science and innovation.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home"><span>M</span>ario <span>D</span>jameh</a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="index.html#certifications">Certifications</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/mariodj/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mariodjameh"><i class="fab fa-github"></i></a>
+                    <a href="mailto:mariodjameh@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2024 Mario Djameh.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
