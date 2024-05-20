@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Smooth scroll for internal links
     $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));
         if (target.length) {
@@ -8,8 +9,11 @@ $(document).ready(function() {
             }, 1000, 'easeInOutExpo');
         }
     });
-});
 
+    // Set current year in footer
+    var currentYear = new Date().getFullYear();
+    $('#2023').text(currentYear);
+});
 
 // Toggle hamburger menu
 const hamburger = document.querySelector('.hamburger');
@@ -20,6 +24,7 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Close hamburger menu when clicking outside of it
 document.addEventListener('click', (event) => {
     const target = event.target;
     if (!target.closest('.hamburger') && !target.closest('.nav-links')) {

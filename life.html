@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="images/favicon/site.webmanifest">
+        <title>Mario Djameh - Personal Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/life.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html#home"><span>M</span>ario <span>D</span>jameh</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-details">
+            <div class="container">
+                <h1>LIFE Wellness Website</h1>
+                <p class="project-subtitle">A Dynamic Web Application with Front-end and Back-end Integration</p>
+                
+                <div class="project-image">
+                    <img src="images/portfolio/life1.jpg" alt="LIFE Wellness Website Project">
+                </div>
+
+                <div class="project-content">
+                    <h2>Project Overview</h2>
+                    <p>The LIFE Wellness website is a dynamic web application developed as part of the Web Programming course at RMIT University. The website aims to provide online wellness services, including Yoga, Meditation, Stretching, and Healthy Habits, to users in the post-COVID-19 era.</p>
+
+                    <h2>Project Highlights</h2>
+                    <ul>
+                        <li>Developed a responsive front-end using HTML, CSS, and JavaScript</li>
+                        <li>Implemented back-end functionality using PHP and MySQL database</li>
+                        <li>Integrated user registration, login, and personalized user experiences</li>
+                        <li>Utilized AWS services like Elastic Beanstalk for hosting and Route 53 for domain routing</li>
+                        <li>Generated SSL certificate using AWS Certificate Manager for secure HTTPS communication</li>
+                    </ul>
+
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>Front-end: HTML, CSS, JavaScript, jQuery, Bootstrap</li>
+                        <li>Back-end: PHP, MySQL</li>
+                        <li>Hosting: AWS Elastic Beanstalk</li>
+                        <li>Domain Routing: AWS Route 53</li>
+                        <li>SSL Certificate: AWS Certificate Manager</li>
+                    </ul>
+
+                    <h2>Website Features</h2>
+                    <ul>
+                        <li>User Registration and Login: Secure registration and login functionality for users</li>
+                        <li>Personalized User Experience: Customized content in 'My Services' based on user preferences</li>
+                        <li>Service Pages: Detailed information on offered services like Yoga, Meditation, Stretching, and Healthy Habits</li>
+                        <li>Admin Dashboard: Separate admin portal to monitor user data and service utilization</li>
+                        <li>Responsive Design: Mobile-friendly and responsive layout for optimal viewing on different devices</li>
+                    </ul>
+
+                    <h2>Technical Details and Requirements</h2>
+                    
+                    <h3>User Registration and Login</h3>
+                    <p>The LIFE Wellness website implements a secure user registration and login system. User information, including email and password, is collected through a registration form and stored in a MySQL database. The password is hashed using a secure algorithm before being stored to ensure data privacy.</p>
+                    <p>During the login process, user credentials are validated against the stored information in the database. Upon successful authentication, a session is created to maintain the user's logged-in state throughout their interaction with the website.</p>
+
+                    <h3>Caching and Performance Optimization</h3>
+                    <p>To improve website performance and reduce server load, caching techniques are employed. Frequently accessed data, such as user preferences and service information, are cached using server-side caching mechanisms like Redis or Memcached. This allows for faster retrieval of data and reduces the need for repetitive database queries.</p>
+                    <p>Additionally, client-side caching is implemented using browser caching headers. Static assets, such as images and CSS files, are served with appropriate cache headers to enable efficient caching by the user's browser, resulting in faster page loads and improved user experience.</p>
+
+                    <h3>Cookies and Session Management</h3>
+                    <p>Cookies are utilized to store user-specific information and maintain session state. Upon successful login, a session cookie is set in the user's browser, containing a unique session identifier. This cookie is securely transmitted between the client and server to authenticate the user's requests and maintain their logged-in state.</p>
+                    <p>The server-side session management system, implemented using PHP's built-in session handling functions, associates the session identifier with the user's data stored on the server. This allows for personalized experiences, such as displaying user-specific content and preferences.</p>
+
+                    <h3>Logout Functionality</h3>
+                    <p>The website includes a logout feature that allows users to securely end their session. When a user clicks on the logout button, the server-side script invalidates the user's session, removes the associated session data, and clears the session cookie from the user's browser. This ensures that the user is properly logged out and their session is terminated.</p>
+
+                    <h3>Form Validation and Sanitization</h3>
+                    <p>To ensure data integrity and protect against potential security vulnerabilities, all user inputs through forms are validated and sanitized on both the client-side and server-side. Client-side validation is performed using JavaScript to provide immediate feedback to the user and reduce unnecessary server requests.</p>
+                    <p>On the server-side, PHP's built-in validation and sanitization functions are used to validate and clean user inputs. This includes checking for required fields, validating data formats (e.g., email addresses), and sanitizing user inputs to prevent cross-site scripting (XSS) attacks and SQL injection vulnerabilities.</p>
+
+                    <h3>Front-end and Back-end Communication</h3>
+                    <p>The front-end of the LIFE Wellness website, built using HTML, CSS, and JavaScript, communicates with the back-end PHP scripts through HTTP requests. When a user interacts with the website, such as submitting a form or requesting data, the front-end sends an HTTP request to the appropriate back-end script.</p>
+                    <p>The back-end script processes the request, interacts with the MySQL database if necessary, and generates an appropriate response. The response is then sent back to the front-end, where it is handled by JavaScript to update the user interface dynamically. This communication between the front-end and back-end enables seamless data exchange and allows for a responsive and interactive user experience.</p>
+
+                    <h2>AWS Integration</h2>
+                    <p>To enhance the scalability and reliability of the LIFE Wellness website, AWS services were utilized. Elastic Beanstalk was used to host the website, providing easy deployment and management of the application. Route 53 was employed for domain routing, allowing users to access the website using a custom domain name (life.mjameh.com).</p>
+                    <p>Additionally, an SSL certificate was generated using AWS Certificate Manager to enable secure HTTPS communication, ensuring the privacy and integrity of user data transmitted between the client and server.</p>
+
+                    <h2>Challenges and Learnings</h2>
+                    <p>Developing the LIFE Wellness website presented various challenges, including integrating front-end and back-end components, managing user authentication and sessions, and ensuring data security. Overcoming these challenges required a deep understanding of web development concepts, PHP programming, and database management.</p>
+                    <p>Throughout the project, valuable lessons were learned about building dynamic web applications, working with AWS services, and implementing best practices for web development. The experience gained from this project has significantly enhanced my skills in full-stack web development and cloud deployment.</p>
+
+                    <h2>Project Resources</h2>
+                    <ul>
+                        <li><a href="https://github.com/mariodj0/LIFE-wellness-extended_backend" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://life.mjameh.com" target="_blank">Live Website</a></li>
+                    </ul>
+
+                    <p>The LIFE Wellness website project demonstrates my ability to develop a comprehensive web application, integrating front-end and back-end technologies, and leveraging cloud services for scalable and secure deployment. It showcases my skills in web development, problem-solving, and attention to detail.</p>
+
+                    <p>I invite you to explore the live website and delve into the codebase on GitHub. If you have any questions or would like to discuss the project further, please feel free to reach out. Thank you for your interest!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home"><span>M</span>ario <span>D</span>jameh</a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="index.html#certifications">Certifications</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/mariodj/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mariodj0"><i class="fab fa-github"></i></a>
+                    <a href="mailto:djamehmario@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <p>&copy; <span id="2023"></span> Mario Djameh.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

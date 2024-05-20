@@ -1,4 +1,4 @@
-/* personal-website-project.css */
+/* life-wellness-website-project.css */
 .project-details {
     padding: 80px 0;
     background-color: #182233;
@@ -44,24 +44,9 @@
     margin-bottom: 20px;
 }
 
-.project-content ol,
 .project-content ul {
     margin-bottom: 20px;
     padding-left: 20px;
-}
-
-.project-content pre {
-    background-color: #24314d;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    overflow-x: auto;
-}
-
-.project-content code {
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    color: #d8dee9;
 }
 
 .project-content a {
