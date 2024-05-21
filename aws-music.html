@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <title>Mario Djameh - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aws-music.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html#home"><span>M</span>ario <span>D</span>jameh</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-details">
+            <div class="container">
+                <h1>AWS Music Subscription Application</h1>
+                <p class="project-subtitle">Revolutionizing Music Subscription with AWS Services</p>
+
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1489&q=80" alt="AWS Music Project">
+                </div>
+
+                <div class="project-content">
+                    <h2>Project Overview</h2>
+                    <p>The AWS Music Subscription Application is a comprehensive project developed using various AWS services to provide users with a seamless music subscription experience. The application allows users to register, login, subscribe to music, and query music based on title, artist, and year.</p>
+
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li><strong>AWS EC2</strong>: The application is hosted on an Amazon EC2 instance, providing a scalable and reliable infrastructure for running the backend server.</li>
+                        <li><strong>AWS S3</strong>: Amazon S3 is used to store and serve the artist images, ensuring fast and efficient delivery of media assets to the application.</li>
+                        <li><strong>AWS API Gateway</strong>: API Gateway is utilized to create and manage the APIs that enable communication between the frontend and backend components of the application.</li>
+                        <li><strong>AWS Lambda</strong>: Lambda functions are employed to handle specific backend tasks, such as querying the music database and updating user subscriptions, allowing for serverless computing and automatic scaling.</li>
+                        <li><strong>AWS DynamoDB</strong>: DynamoDB, a NoSQL database service, is used to store and retrieve user information, music metadata, and subscription details, providing fast and scalable data storage.</li>
+                        <li><strong>Python</strong>: The backend server is implemented using the Python programming language, leveraging the Flask framework for building the RESTful API endpoints.</li>
+                        <li><strong>HTML/CSS/JavaScript</strong>: The frontend of the application is built using HTML for structure, CSS for styling, and JavaScript for interactivity and communication with the backend API.</li>
+                    </ul>
+
+                    <h2>Features</h2>
+                    <ul>
+                        <li><strong>User Registration and Login</strong>: Users can create an account by providing their email, username, and password. They can then log in to the application using their credentials, which are securely stored and authenticated using DynamoDB.</li>
+                        <li><strong>Music Subscription Management</strong>: Once logged in, users can browse and subscribe to various music tracks. They can view their subscribed music, including the title, artist, and year, and also remove subscriptions as desired. The subscription information is stored in DynamoDB for efficient retrieval and management.</li>
+                        <li><strong>Music Querying</strong>: The application provides a powerful music querying feature that allows users to search for music based on title, artist, and year. The backend server handles these queries by interacting with the music metadata stored in DynamoDB, returning the relevant results to the frontend for display.</li>
+                        <li><strong>Integration with AWS Services</strong>: The project seamlessly integrates various AWS services to leverage their capabilities. EC2 hosts the backend server, S3 stores and serves artist images, API Gateway manages the API endpoints, Lambda functions handle specific backend tasks, and DynamoDB stores and retrieves data. This integration ensures scalability, reliability, and efficient performance of the application.</li>
+                    </ul>
+
+                    <h2>Code Snippets</h2>
+                    <p>Here are a few code snippets that demonstrate the key functionalities of the application:</p>
+
+                    <h3>User Registration</h3>
+                    <p>The following code snippet shows the backend API endpoint for user registration:</p>
+                    <pre><code>@app.route("/register", methods=["POST"])
+def register():
+    data = request.get_json()
+    email = data.get("email")
+    username = data.get("username")
+    password = data.get("password")
+
+    # Check if user exists in DynamoDB
+    response = table.get_item(Key={"email": email})
+
+    if "Item" in response:
+        return jsonify({"message": "User already exists"}), 409
+
+    # Add user to DynamoDB
+    table.put_item(Item={"email": email, "user_name": username, "password": password})
+
+    return jsonify({"message": "User created successfully"}), 201
+</code></pre>
+
+                    <h3>Music Querying</h3>
+                    <p>The following code snippet demonstrates the backend API endpoint for querying music based on title, artist, and year:</p>
+                    <pre><code>@app.route("/query", methods=["POST"])
+def query():
+    data = request.get_json()
+    title = data.get("title", "")
+    year = data.get("year", "")
+    artist = data.get("artist", "")
+
+    music_table = dynamodb.Table("music")
+
+    filter_expression = None
+
+    if title:
+        filter_expression = Attr("title").begins_with(title)
+
+    if year:
+        year_filter = Attr("year").begins_with(year)
+        filter_expression = filter_expression & year_filter if filter_expression else year_filter
+
+    if artist:
+        artist_filter = Attr("artist").begins_with(artist)
+        filter_expression = filter_expression & artist_filter if filter_expression else artist_filter
+
+    if filter_expression:
+        response = music_table.scan(FilterExpression=filter_expression)
+        items = response["Items"]
+    else:
+        response = music_table.scan()
+        items = response["Items"]
+
+    return jsonify({"results": items})
+</code></pre>
+
+                    <h2>Setup and Deployment</h2>
+                    <ol>
+                        <li>Set up the necessary AWS services, including EC2 for hosting the backend server, S3 for storing artist images, API Gateway for managing API endpoints, Lambda for serverless computing, and DynamoDB for data storage.</li>
+                        <li>Deploy the application files to the appropriate AWS services. The backend server code (<code>music_server.py</code>) should be deployed to an EC2 instance, while the frontend files (<code>index.html</code>, <code>register.html</code>, <code>main.html</code>, and associated CSS and JavaScript files) can be served from an S3 bucket or any other web hosting service.</li>
+                        <li>Configure the necessary permissions and settings for each AWS service. Set up appropriate IAM roles and policies to grant the required access permissions to the EC2 instance, Lambda functions, and DynamoDB tables. Configure the API Gateway to map the API endpoints to the corresponding backend server routes.</li>
+                        <li>Access the application through the provided URL. Users can register, log in, subscribe to music, and query music using the intuitive web interface.</li>
+                    </ol>
+
+                    <h2>Future Enhancements</h2>
+                    <ul>
+                        <li>Implement user profile management, allowing users to update their information and preferences.</li>
+                        <li>Add music playback functionality to enable users to listen to their subscribed music directly within the application.</li>
+                        <li>Integrate with a music streaming service API to provide a larger library of music tracks and enhance the user experience.</li>
+                        <li>Implement music recommendations based on user preferences and listening history using machine learning algorithms.</li>
+                        <li>Enhance the user interface with more interactive features, such as music visualizations and social sharing options.</li>
+                    </ul>
+
+                    <h2>Project Resources</h2>
+                    <ul>
+                        <li><a href="https://github.com/mariodj0/aws-music-subscription" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://aws.amazon.com/" target="_blank">AWS Documentation</a></li>
+                    </ul>
+
+                    <p>The AWS Music Subscription Application demonstrates the power and flexibility of combining various AWS services to build a scalable and feature-rich music platform. By leveraging the capabilities of EC2, S3, API Gateway, Lambda, and DynamoDB, the application provides a seamless music subscription experience to users while ensuring efficient performance and data management.</p>
+
+                    <p>If you have any questions or would like to discuss the project further, please feel free to reach out. Let's explore how we can leverage AWS services to create innovative solutions in the world of music and beyond.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home"><span>M</span>ario <span>D</span>jameh</a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="index.html#certifications">Certifications</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/mariodj/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mariodj0"><i class="fab fa-github"></i></a>
+                    <a href="mailto:djamehmario@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <p>&copy; <span id="2023"></span> Mario Djameh.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
